@@ -1,0 +1,30 @@
+{
+  "name": "gemini-chat-app",
+  "version": "1.0.0",
+  "description": "A single-page web application for chatting with Google Gemini AI with code parsing capabilities",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "dev": "npx http-server -p 3000 -c-1",
+    "start": "npx http-server -p 8080",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "gemini",
+    "ai",
+    "chat",
+    "javascript",
+    "vanilla-js"
+  ],
+  "author": "Gemini Chat App",
+  "license": "MIT",
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "vitest": "^1.2.1",
+    "jsdom": "^23.2.0"
+  }
+}

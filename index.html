@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chat interface for Google Gemini AI with code parsing and syntax highlighting">
+    <meta name="author" content="Gemini Chat App">
+    <title>Gemini Chat App</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- Add preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Optional: Add fonts if needed -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono&display=swap" rel="stylesheet"> -->
+</head>
+<body>
+    <div id="app">
+        <header class="app-header">
+            <h1 class="app-title">Gemini Chat</h1>
+            <div class="app-controls">
+                <button id="theme-toggle" class="icon-button" aria-label="Toggle dark/light theme">
+                    <span class="visually-hidden">Toggle theme</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>
+                </button>
+            </div>
+        </header>
+
+        <main class="main-layout">
+            <section id="chat-container" class="chat-section">
+                <div class="welcome-message">
+                    <h2>Welcome to Gemini Chat</h2>
+                    <p>Ask me anything or request code examples.</p>
+                </div>
+                <div id="messages" class="messages-container" role="log" aria-live="polite" aria-label="Chat messages">
+                    <!-- Messages will be dynamically inserted here -->
+                </div>
+            </section>
+            
+            <aside id="code-panels-container" class="code-panels-section">
+                <div class="panels-header">
+                    <h2>Code Panels</h2>
+                    <button id="collapse-all" class="text-button" aria-label="Collapse all panels">
+                        <span>Collapse All</span>
+                    </button>
+                </div>
+                <div class="panels-content">
+                    <!-- Code panels will be dynamically inserted here -->
+                    <div class="empty-panels-message">
+                        <p>Code snippets from the AI will appear here</p>
+                    </div>
+                </div>
+            </aside>
+        </main>
+        
+        <footer id="input-container" class="input-section">
+            <div class="input-wrapper">
+                <textarea 
+                    id="message-input" 
+                    class="message-input"
+                    placeholder="Type your message here..." 
+                    rows="3"
+                    aria-label="Message input"
+                    maxlength="4000">
+                </textarea>
+                <button id="send-button" class="send-button" type="button" aria-label="Send message">
+                    <span class="send-icon">→</span>
+                </button>
+            </div>
+            <div class="input-status">
+                <span id="char-count" class="char-count">0/4000</span>
+                <span id="status-message" class="status-message"></span>
+            </div>
+        </footer>
+    </div>
+    
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
